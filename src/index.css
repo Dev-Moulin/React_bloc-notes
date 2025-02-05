@@ -1,0 +1,192 @@
+.app {
+  display: flex;
+  background: rgb(71, 70, 70);
+}
+
+/* Barre latérale */
+.sidebar {
+  min-width: 175px;
+  width: 250px;
+  background: rgb(71, 70, 70);
+  padding: 10px;
+  border-right: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar button {
+  padding: 10px;
+  background-color: #8babcd;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+
+}
+
+.sidebar li {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 92%;
+}
+
+.sidebar li.active {
+  background-color: #475269;
+  color: white;
+  border-radius: 10px;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: red;
+}
+
+/* Zone d'édition */
+.editor {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #475269;
+}
+
+.markdown-input textarea {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ddd;
+  background: #0c0e7f;
+}
+
+.markdown-input {
+  width: 100%;
+  height: 500px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background: #d4dd30;
+}
+
+.note-display {
+  width: 100%;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background: #475269;
+}
+
+.note-title-input {
+  width: 80%;
+  font-size: 14px;
+  padding: 5px;
+  border: none;
+  background: transparent;
+  cursor: text;
+  outline: none;
+}
+
+.note-title-input:focus {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Media Queries */
+
+/* 1px - 480px */
+@media (max-width: 480px) {
+  /* Styles pour les très petits écrans */
+  .sidebar button {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+
+  .sidebar li {
+    font-size: 0.9em;
+  }
+
+  .markdown-input {
+    font-size: 14px;
+    height: 120px;
+  }
+}
+
+/* 481px - 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Styles pour les téléphones (un peu plus grands) */
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .markdown-input {
+    width: 100%;
+    height: 150px;
+  }
+
+  .note-display {
+    width: 100%;
+  }
+}
+
+/* 769px - 992px */
+@media (min-width: 769px) and (max-width: 992px) {
+  /* Styles pour les tablettes */
+  .sidebar {
+    width: 200px;
+  }
+
+  .markdown-input {
+    height: 180px;
+    width: 100%;
+  }
+  .note-display {
+    width: 100%;
+  }
+}
+
+/* 993px - 1379px (ou plus) */
+@media (min-width: 993px) and (max-width: 1379px) {
+  .sidebar {
+    width: 250px; /* Ou tout autre style spécifique à cette plage */
+  }
+  .markdown-input {
+    
+    width: 100%;
+  }
+  .note-display {
+    width: 100%;
+  }
+}
+
+/* 1380px et plus */
+@media (min-width: 1380px) {
+  .sidebar {
+    width: 250px; /* La barre latérale garde sa largeur de 250px */
+  }
+  .markdown-input {
+    
+    width: 100%;
+  }
+  .note-display {
+    width: 100%;
+  }
+}
